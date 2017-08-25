@@ -2,10 +2,10 @@
 include_once('dataBase.php'); //Incluye la base
 
 // Define configuration
-define("DB_HOST", "localhost");
-define("DB_USER", "postgres");
-define("DB_PASS", "123");
-define("DB_NAME", "demo");
+define("DB_HOST", "ec2-174-129-218-106.compute-1.amazonaws.com");
+define("DB_USER", "hxcfzdkbqbohvc");
+define("DB_PASS", "39494f640a60c51690fc9ef199b158759dd632369c989e615dda594a13717c4c");
+define("DB_NAME", "d8iml79r188c7c");
 
 
 class Collector extends dataBase
