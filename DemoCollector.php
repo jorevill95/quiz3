@@ -18,7 +18,7 @@ class DemoCollector extends Collector
    echo "linea 1";
     $arrayDemo= array();  //SE crea el arreglo donde se guardaran los objetos demo      
     foreach ($rows as $c){ //Hace foreach de cada row del fetch de la base
-      $aux = new Demo($c{'iddemo'},$c{'nombre'}); //Crea el nuevo objeto demo
+      $aux = new Demo($c{'id'},$c{'nombre'}); //Crea el nuevo objeto demo
       array_push($arrayDemo, $aux); 
     }
     return $arrayDemo; //Se lo envía a la página para que muestre
@@ -29,15 +29,15 @@ class DemoCollector extends Collector
 function showDemo($id){
 
 
-  $row = self::$db->getRows("SELECT * FROM demo WHERE iddemo= ? ", array("{$id}"));
-  $objDemo = new Demo($row[0]{'iddemo'}, $row[0]{'nombre'});
+  $row = self::$db->getRows("SELECT * FROM demo WHERE id= ? ", array("{$id}"));
+  $objDemo = new Demo($row[0]{'id'}, $row[0]{'nombre'});
 
   return $objDemo;
 }
 
 
 function updateDemo($id, $nombre){
-  $insertrow = self::$db->updateRow("UPDATE public.demo SET nombre = ? WHERE iddemo = ? ", array( "{$nombre}", $id));
+  $insertrow = self::$db->updateRow("UPDATE public.demo SET nombre = ? WHERE id = ? ", array( "{$nombre}", $id));
 }
 
 
